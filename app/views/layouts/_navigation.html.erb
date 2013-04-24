@@ -17,10 +17,19 @@
       <li>
       <%= link_to 'Admin', users_path %>
       </li>
+      <li>
+      <%= link_to 'Karte', products_path %>
+      </li>
     <% end %>
   <% else %>
     <li>
     <%= link_to 'Sign up', new_user_registration_path %>
     </li>
   <% end %>
+	<ul class="nav pull-right">
+		<li>
+			<%= link_to 'Warenkorb', current_cart%>
+		</li>
+	</ul>
 </ul>
+

@@ -1,0 +1,18 @@
+<%= simple_form_for(@order) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :forname %>
+    <%= f.input :street %>
+    <%= f.input :city %>
+    <%= f.input :zip %>
+    <%= f.input :email %>
+    <%= f.input :order_type %>
+    <%= f.input :mobile %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

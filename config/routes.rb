@@ -1,4 +1,16 @@
 MobilOrder::Application.routes.draw do
+  resources :orders
+
+
+  resources :line_items
+
+
+  resources :carts
+
+
+  resources :products
+
+
   authenticated :user do
     root :to => 'home#index'
   end

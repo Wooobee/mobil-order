@@ -1,0 +1,16 @@
+<%= simple_form_for(@product) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :description %>
+		<%= f.input :image, as: :image_preview, input_html: {preview_version: :thumb}  %>
+    <%= f.input :price, as: :currency %>
+		<%= f.input :is_daily, :input_html => { :checked => false } %>
+		<%= f.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
