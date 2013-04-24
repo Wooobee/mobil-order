@@ -58,7 +58,14 @@ class LineItemsController < ApplicationController
   # PUT /line_items/1
   # PUT /line_items/1.json
   def update
-    @line_item = LineItem.find(params[:id])
+    @line_item = line_items.find_by_product_id(product_id)
+    if @line_item
+      if @line_item.quantity > 1
+        @line_item.quantity -= 1
+      else
+        @line_item.destroy
+      end
+    end
 
     respond_to do |format|
       if @line_item.update_attributes(params[:line_item])
