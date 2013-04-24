@@ -58,7 +58,7 @@ class LineItemsController < ApplicationController
   # PUT /line_items/1
   # PUT /line_items/1.json
   def update
-    @line_item = line_items.find_by_product_id(product_id)
+    @line_item = LineItem.find_by_product_id(params[:product_id])
     if @line_item
       if @line_item.quantity > 1
         @line_item.quantity -= 1
@@ -69,7 +69,7 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.update_attributes(params[:line_item])
-        format.html { redirect_to @line_item, notice: 'Line item was successfully updated.' }
+        format.html { redirect_to(root_path, :notice => 'Artikel entfernt') }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

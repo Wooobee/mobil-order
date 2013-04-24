@@ -17,4 +17,6 @@ MobilOrder::Application.routes.draw do
   root :to => "home#index"
   devise_for :users
   resources :users
+  
+  match '/cart_update' => "line_items#update"
 end
