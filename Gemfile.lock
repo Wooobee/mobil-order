@@ -138,13 +138,9 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
-    simple_form (2.0.4)
+    simple_form (2.1.0)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
-    simple_form_fancy_uploads (0.0.2)
-      carrierwave
-      rails (~> 3.2.1)
-      simple_form (~> 2.0.1)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -192,8 +188,7 @@ DEPENDENCIES
   rolify (>= 3.2.0)
   rspec-rails (>= 2.12.2)
   sass-rails (~> 3.2.3)
-  simple_form (~> 2.0.0)
-  simple_form_fancy_uploads
+  simple_form
   sqlite3
   thin (>= 1.5.0)
   uglifier (>= 1.0.3)
