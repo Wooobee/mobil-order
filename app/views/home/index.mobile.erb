@@ -1,7 +1,9 @@
-<h3>Home</h3>
-<% @products.each do |product| %>
-  <p><%=link_to product.title, product %><br/>
-		<%= number_to_currency(product.price) %>
-	</p>
-	<%= button_to 'Add to Cart', line_items_path(:product_id => product) %>
+<h3>Angebote</h3>
+<div id="product_list">
+	<%= render 'products_list'%>
+</div>
+
+<% if not current_cart.total_items == 0 %>
+	<%= link_to 'Weiter zum Bestellen', current_cart, :class => "btn my-button-blue"%>
 <% end %>
+

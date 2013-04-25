@@ -7,8 +7,8 @@ group :production do
   gem 'pg'
 end
 group :development, :test do
-  #gem 'sqlite3'
-  gem 'pg'
+  gem 'sqlite3'
+  #gem 'pg'
 end
 
 group :assets do
@@ -25,7 +25,7 @@ gem "bootstrap-sass", ">= 2.3.0.0"
 gem "devise", ">= 2.2.3"
 gem "cancan", ">= 1.6.9"
 gem "rolify", ">= 3.2.0"
-gem "simple_form"
+gem "simple_form", '~> 2.0.0.rc'
 gem "quiet_assets", ">= 1.0.2", :group => :development
 gem "figaro", ">= 0.6.3"
 gem "better_errors", ">= 0.7.2", :group => :development
@@ -36,4 +36,4 @@ gem 'jquery_mobile_rails'
 gem 'mobylette'
 gem "carrierwave"
 gem "rmagick"
-#gem 'simple_form_fancy_uploads'
+gem 'simple_form_fancy_uploads'

@@ -1,6 +1,8 @@
 <% @products.each do |product| %>
+	<div class="row">
+		<div class="span8">
   <p><%=link_to product.title, product %>		
-		<%= number_to_currency(product.price) %>
+		
 		Anzahl:
 		<% if not current_cart.total_items == 0%>
 			<% if current_cart.line_items.find_by_product_id(product.id) %>
@@ -9,8 +11,14 @@
 			 0
 			<% end %>
 		<% end %>
-		
+		<br/>
+		<%= number_to_currency(product.price) %>
 	</p>
-	<%= button_to 'Add to Cart', line_items_path(:product_id => product), :class => "btn" %>
-	<%= button_to 'Remove from Cart', cart_update_path(:product_id => product), :class=>'btn', :method => :post  %>
+	</div>
+	<div class="span4">
+		<%= link_to raw("<i class=\"icon-plus icon-white\"></i>"), line_items_path(:product_id => product), :class => "btn btn-success pull-left my-button", :method => :post %>
+		<%= link_to raw("<i class=\"icon-minus icon-white\"></i>"), cart_update_path(:product_id => product), :class=>'btn btn-danger	my-button', :method => :post  %>
+		<div class="clearfix"></div>
+	</div>
+</div>
 <% end %>
