@@ -1,8 +1,16 @@
 source 'https://rubygems.org'
+gem 'rake'
 gem 'rails', '3.2.13'
-gem 'sqlite3', :group => :development
-gem 'pg', :group => :development
-gem 'pg', :group => :production
+gem 'rails-i18n'
+
+group :production do
+  gem 'pg'
+end
+group :development, :test do
+  #gem 'sqlite3'
+  gem 'pg'
+end
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
