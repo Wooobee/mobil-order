@@ -12,5 +12,5 @@
 		
 	</p>
 	<%= button_to 'Add to Cart', line_items_path(:product_id => product), :class => "btn" %>
-	<%= button_to 'Remove from Cart', cart_update_path(:product_id => product), :method => "put", :class=>'btn' %>
+	<%= button_to 'Remove from Cart', cart_update_path(:product_id => product), :class=>'btn', :method => :post  %>
 <% end %>

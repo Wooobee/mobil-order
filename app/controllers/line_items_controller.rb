@@ -62,20 +62,16 @@ class LineItemsController < ApplicationController
     if @line_item
       if @line_item.quantity > 1
         @line_item.quantity -= 1
+        @line_item.save
       else
         @line_item.destroy
       end
+      
     end
 
-    respond_to do |format|
-      if @line_item.update_attributes(params[:line_item])
-        format.html { redirect_to(root_path, :notice => 'Artikel entfernt') }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @line_item.errors, status: :unprocessable_entity }
-      end
-    end
+  
+    redirect_to(root_url, :notice => 'Artikel entfernt') 
+
   end
 
   # DELETE /line_items/1

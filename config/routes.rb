@@ -18,5 +18,5 @@ MobilOrder::Application.routes.draw do
   devise_for :users
   resources :users
   
-  match '/cart_update' => "line_items#update"
+  match '/cart_update' => "line_items#update", :via => :post
 end
