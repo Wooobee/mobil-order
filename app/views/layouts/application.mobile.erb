@@ -1,3 +1,56 @@
-<h1>Mobil</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Mobil Order" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Mobil Order" %>">
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+  </head>
+  <body class="<%= controller_name %> <%= action_name %>">
+		<div data-role="page" id="page1">
+		    <div data-theme="" data-role="header">
+		        <h3>
+		            Bar Central
+		        </h3>
+		        <div data-role="navbar" data-iconpos="left">
+		            <ul>
+		                <li>
+		                    <a href="#page1" data-transition="fade" data-theme="c" data-icon="home"
+		                    class="ui-btn-active ui-state-persist">
+		                        Karte
+		                    </a>
+		                </li>
+		                <li>
+		                    <a href="#page1" data-transition="fade" data-theme="c" data-icon="star"
+		                    class="ui-btn-active ui-state-persist">
+		                        Warenkorb
+		                    </a>
+		                </li>
+		            </ul>
+		        </div>
+		    </div>
+    <div id="main" role="main">
+      <div class="container">
+		    <div data-role="content">
+          <%= render 'layouts/messages' %>
+          <%= yield %>
+		    </div>
+			    <div data-theme="a" data-role="footer">
+			        <h3>
+			            Footer
+			        </h3>
+			    </div>
+       </div><!--! end of .container -->
+      </div> <!--! end of #main -->
+    </div> 
+  </body>
+</html>
 
-dada
+
+
+
+    
+</div>
