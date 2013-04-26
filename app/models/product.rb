@@ -1,9 +1,10 @@
+require 'carrierwave/orm/activerecord'
 class Product < ActiveRecord::Base
   belongs_to :user
   has_many :line_items
   has_many :orders, :through => :line_items
-  attr_accessible :description, :image, :price, :title, :user_id, :is_daily
-  mount_uploader :image, ImageUploader
+  attr_accessible :description, :avatar, :price, :title, :user_id, :is_daily
+  mount_uploader :avatar, AvatarUploader
   
   validates :title, :user_id, :price, :presence => true
   

@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(params[:product])
     
-    logger.debug "test"
+    logger.debug "Jonas: #{params[:product][:image]}"
 
     respond_to do |format|
       if @product.save

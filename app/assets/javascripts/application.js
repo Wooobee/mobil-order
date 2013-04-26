@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require app_lib
 //= require jquery.mobile
 //= require bootstrap
 //= require_tree .
-
