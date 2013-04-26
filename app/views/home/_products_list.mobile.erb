@@ -1,13 +1,16 @@
 <div class="ui-grid-a">
 <% @products.each do |product| %>
 	<div class="ui-block-a">
-	  <div style="position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;">
-			<%= image_tag product.avatar_url(:thumb)	if not product.avatar_url.nil?%>          
+	  <div class="img_div">
+			<%= image_tag product.avatar_url(:thumb), :class => "img_list"	if not product.avatar_url.nil?%>
 	  </div>
 	</div>
 	<div class="ui-block-b">
-  <p><%=link_to product.title, product %>		
-		
+  <p>
+		<%=link_to product.title, product %>		
+		<br/>
+		<%= number_to_currency(product.price) %>
+		<br/>
 		Anzahl:
 		<% if not current_cart.total_items == 0%>
 			<% if current_cart.line_items.find_by_product_id(product.id) %>
@@ -16,8 +19,6 @@
 			 0
 			<% end %>
 		<% end %>
-		<br/>
-		<%= number_to_currency(product.price) %>
 	</p>
 	</div>
 	<div class="ui-block-c">

@@ -40,3 +40,18 @@ margin-right: 5px;
 margin-bottom: 5px !important;
 margin-top: 5px !important;
 }
+
+.img_div{
+width: 120px; 
+position: relative; 
+background-color: #fbfbfb; 
+border: 1px solid #b8b8b8;
+}
+
+.img_list{
+position: absolute; 
+top: 50%; 
+left: 50%; 
+margin-left: -16px; 
+margin-top: -18px
+}
