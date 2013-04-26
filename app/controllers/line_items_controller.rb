@@ -54,6 +54,7 @@ class LineItemsController < ApplicationController
         format.json { render json: @line_item, status: :created, location: @line_item }
       else
         format.html { render action: "new" }
+        format.mobile { render action: "new" }
         format.json { render json: @line_item.errors, status: :unprocessable_entity }
       end
     end

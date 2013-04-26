@@ -57,9 +57,11 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         format.html { redirect_to(root_url, :notice => 'Vielen Dank für Ihre Bestellung.') }
+        format.mobile { redirect_to(root_url, :notice => 'Vielen Dank für Ihre Bestellung.') }
         format.json { render json: @order, status: :created, location: @order }
       else
         format.html { render action: "new" }
+        format.mobile { render action: "new" }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
