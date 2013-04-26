@@ -1,4 +1,7 @@
+# encoding: utf-8
 class OrdersController < ApplicationController
+  load_and_authorize_resource
+  
   # GET /orders
   # GET /orders.json
   def index
@@ -53,7 +56,7 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-        format.html { redirect_to(root_url, :notice => 'Thank you for your order.') }
+        format.html { redirect_to(root_url, :notice => 'Vielen Dank für Ihre Bestellung.') }
         format.json { render json: @order, status: :created, location: @order }
       else
         format.html { render action: "new" }

@@ -10,8 +10,7 @@
     <%= f.input :email %>
     <%= f.input :mobile, :label => 'Handynummer' %>
 		<%= f.select :order_type, ['Zum Mitnehmen', 'Vorbestellung'] %>
-		<p>Wann willst du deine Bestellung</p>
-		<%= f.time_select :pickup_time, :ampm => false, :minute_step => 15  %>
+		<%= f.input :pickup_time, :label => "Wann willst du vorbei kommen?"  %>
   </div>
 
   <div class="form-actions">

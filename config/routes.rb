@@ -1,4 +1,8 @@
 MobilOrder::Application.routes.draw do
+  get "static/imprint"
+
+  get "static/how"
+
   resources :orders
 
 

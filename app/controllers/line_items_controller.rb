@@ -1,4 +1,7 @@
+# encoding: utf-8
 class LineItemsController < ApplicationController
+  load_and_authorize_resource
+  
   # GET /line_items
   # GET /line_items.json
   def index
@@ -46,8 +49,8 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to(root_path, :notice => 'Line item was successfully created.') }
-        format.mobile { redirect_to(root_path, :notice => 'Line item was successfully created.') }
+        format.html { redirect_to(root_path, :notice => 'Artikel hinzugefügt.') }
+        format.mobile { redirect_to(root_path, :notice => 'Artikel hinzugefügt.') }
         format.json { render json: @line_item, status: :created, location: @line_item }
       else
         format.html { render action: "new" }
