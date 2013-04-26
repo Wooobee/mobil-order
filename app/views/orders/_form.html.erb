@@ -3,16 +3,18 @@
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :forname %>
+    <!--<%= f.input :forname %>
     <%= f.input :street %>
     <%= f.input :city %>
-    <%= f.input :zip %>
+    <%= f.input :zip %>-->
     <%= f.input :email %>
-    <%= f.input :order_type %>
-    <%= f.input :mobile %>
+    <%= f.input :mobile, :label => 'Handynummer' %>
+		<%= f.select :order_type, ['Zum Mitnehmen', 'Vorbestellung'] %>
+		<p>Wann willst du deine Bestellung</p>
+		<%= f.time_select :pickup_time, :ampm => false, :minute_step => 15  %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, 'Kostenpflichtig bestellen', :class => "btn btn-success pull-left my-button" %>
   </div>
 <% end %>

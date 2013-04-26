@@ -4,6 +4,6 @@
 </div>
 
 <% if not current_cart.total_items == 0 %>
-	<%= link_to 'Weiter zum Bestellen', current_cart, :class => "btn my-button-blue"%>
+	<%= link_to 'Weiter zum Bestellen', current_cart, :class => "btn btn-success my-button-blue", :data => {:role =>"button"}%>
 <% end %>
 
