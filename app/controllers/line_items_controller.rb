@@ -49,8 +49,8 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to(root_path, :notice => 'Artikel hinzugefügt.') }
-        format.mobile { redirect_to(root_path, :notice => 'Artikel hinzugefügt.') }
+        format.html { redirect_to(:back, :notice => 'Artikel hinzugefügt.') }
+        format.mobile { redirect_to(:back, :notice => 'Artikel hinzugefügt.') }
         format.json { render json: @line_item, status: :created, location: @line_item }
       else
         format.html { render action: "new" }

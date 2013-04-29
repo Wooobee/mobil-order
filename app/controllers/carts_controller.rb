@@ -90,4 +90,16 @@ class CartsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  
+  def add_drink
+    @cart = current_cart
+    @drinks = Product.where(:is_daily => true)
+
+    respond_to do |format|
+      format.html 
+      format.mobile 
+      format.json { head :no_content }
+    end
+  end
 end

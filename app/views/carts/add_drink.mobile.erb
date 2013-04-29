@@ -1,0 +1,34 @@
+<h1>Durst?</h1>
+<p>Bestellen Sie zu jedem Essen einen Softdrink dazu für nur 1,60 extra.</p>
+<div class="ui-grid-a">
+<% @drinks.each do |product| %>
+	<div class="ui-block-a grid-cell-image">
+	  <div class="img_div">
+			<%= image_tag product.avatar_url(:thumb), :class => ""	if not product.avatar_url.nil?%>
+	  </div>
+	</div>
+	<div class="ui-block-b grid-cell">
+  <p>
+		<%=link_to product.title, product %>		
+		<br/>
+		<%= number_to_currency(product.price, :unit => "€") %>
+		<br/>
+		Anzahl:
+		<% if not current_cart.total_items == 0%>
+			<% if current_cart.line_items.find_by_product_id(product.id) %>
+			 <%= current_cart.line_items.find_by_product_id(product.id).quantity%>
+			 <% else %>
+			 0
+			<% end %>
+		<% end %>
+	</p>
+	<%= link_to raw("<i class=\"icon-plus icon-white\"></i>"), line_items_path(:product_id => product), :class => "btn btn-success pull-left my-button", :method => :post %>
+	<%= link_to raw("<i class=\"icon-minus icon-white\"></i>"), cart_update_path(:product_id => product), :class=>'btn btn-danger	my-button', :method => :post  %>
+	<div class="clearfix"></div>
+	</div>
+</div>
+<% end %>
+</div>
+	
+<%= button_to "Überspringen und weiter", new_order_path, :method => :get, :class => "btn btn-warning pull-left my-button"%>	
+<%= button_to "Bestellung aufgeben", current_cart, :method => :get, :class => "btn btn-success pull-left my-button"%>

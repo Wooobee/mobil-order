@@ -7,7 +7,7 @@ class Ability
       can :manage, :all
     else
       can :create, LineItem
-      can [:create, :read], Cart
+      can [:create, :read, :add_drink, :destroy], Cart
       can :create, Order
       
     end

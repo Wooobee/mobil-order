@@ -51,6 +51,17 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(params[:order])
     @order.add_line_items_from_cart(current_cart)
+    
+    require 'net/http'
+    
+    receiver = params[:order][:mobile]
+    
+    if not receiver.empty?
+      
+      result = Net::HTTP.get(URI.parse(URI.encode("http://gate1.goyyamobile.com/sms/sendsms.asp?receiver="+receiver+"&sender=Bar Central&msg=Vielen Dank für Ihre Bestellung. Wir freuen uns auf Ihren Besuch&id=1655501&pw=eph697kkx&msgtype=t")))
+  
+
+    end
 
     respond_to do |format|
       if @order.save

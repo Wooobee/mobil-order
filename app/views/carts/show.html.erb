@@ -1,4 +1,5 @@
-<div>Ihre Bestellung</div> <table>
+<div>Ihre Bestellung</div> 
+<table>
 <% @cart.line_items.each do |item| %> <tr>
 <td><%= item.quantity %>&times;</td>
 <td><%= item.product.title %></td>
@@ -10,5 +11,10 @@
 <td><%= number_to_currency(@cart.total_price, :unit => "€") %></td>
   </tr>
 </table>
-<%= button_to "Bestellung aufgeben", new_order_path, :method => :get, :class => "btn btn-success pull-left my-button"%>
-<%= button_to 'Warenkorb leeren', @cart, :method => :delete, :confirm => 'Are you sure?', :class => "btn btn-danger pull-left my-button" %>
+
+<% if has_drinks %>
+	<%= button_to "Bestellung aufgeben", new_order_path, :method => :get, :class => "btn btn-success pull-left my-button"%>
+<% else %>
+	<%= button_to "Bestellung aufgeben", add_drink_path, :class => "btn btn-success pull-left my-button"%>
+<% end %>
+<%= button_to 'Warenkorb leeren', @cart, :method => :delete, :confirm => 'Wirklich?', :class => "btn btn-danger pull-left my-button" %>

@@ -2,6 +2,7 @@ MobilOrder::Application.routes.draw do
   get "static/imprint"
 
   get "static/how"
+  
 
   resources :orders
 
@@ -23,4 +24,5 @@ MobilOrder::Application.routes.draw do
   resources :users
   
   match '/cart_update' => "line_items#update", :via => :post
+  match '/add_drink' => "carts#add_drink"
 end
