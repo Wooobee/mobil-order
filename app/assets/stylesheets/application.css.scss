@@ -10,7 +10,7 @@
  *
  *= require_self
  *= require_tree .
- *= require bar-central
+ *= require custom-theme
  *= require jquery.mobile
 
  
@@ -67,4 +67,12 @@ margin-right: auto
 
 .center-button{
 margin: 0 auto;
+}
+
+.ui-title{
+color: #ffffff !important;
+}
+
+.imprint{
+color: #fff !important;
 }

@@ -37,3 +37,4 @@ gem 'mobylette'
 gem "carrierwave"
 gem "rmagick"
 gem 'simple_form_fancy_uploads'
+gem 'cloudinary'

@@ -430,16 +430,16 @@
 -----------------------------------------------------------------------------------------------------------*/
 .ui-bar-x {
 	border: 1px solid #b3b3b3 /*{d-bar-border}*/;
-	background: #cfe3b2 /*{d-bar-background-color}*/;
+	background: #0056a5 /*{d-bar-background-color}*/;
 	color: #3e3e3e /*{d-bar-color}*/;
 	font-weight: bold;
 	text-shadow: 0 /*{d-bar-shadow-x}*/ 1px /*{d-bar-shadow-y}*/ 0 /*{d-bar-shadow-radius}*/ #ffffff /*{d-bar-shadow-color}*/;
-	background-image: -webkit-gradient(linear, left top, left bottom, from( #cfe3b2 /*{d-bar-background-start}*/), to( #cfe3b2 /*{d-bar-background-end}*/)); /* Saf4+, Chrome */
-	background-image: -webkit-linear-gradient( #cfe3b2 /*{d-bar-background-start}*/, #cfe3b2 /*{d-bar-background-end}*/); /* Chrome 10+, Saf5.1+ */
-	background-image:    -moz-linear-gradient( #cfe3b2 /*{d-bar-background-start}*/, #cfe3b2 /*{d-bar-background-end}*/); /* FF3.6 */
-	background-image:     -ms-linear-gradient( #cfe3b2 /*{d-bar-background-start}*/, #cfe3b2 /*{d-bar-background-end}*/); /* IE10 */
-	background-image:      -o-linear-gradient( #cfe3b2 /*{d-bar-background-start}*/, #cfe3b2 /*{d-bar-background-end}*/); /* Opera 11.10+ */
-	background-image:         linear-gradient( #cfe3b2 /*{d-bar-background-start}*/, #cfe3b2 /*{d-bar-background-end}*/);
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #0056a5 /*{d-bar-background-start}*/), to( #0056a5 /*{d-bar-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #0056a5 /*{d-bar-background-start}*/, #0056a5 /*{d-bar-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #0056a5 /*{d-bar-background-start}*/, #0056a5 /*{d-bar-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #0056a5 /*{d-bar-background-start}*/, #0056a5 /*{d-bar-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #0056a5 /*{d-bar-background-start}*/, #0056a5 /*{d-bar-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #0056a5 /*{d-bar-background-start}*/, #0056a5 /*{d-bar-background-end}*/);
 }
 .ui-bar-x .ui-link-inherit {
 	color: #3e3e3e /*{d-bar-color}*/;

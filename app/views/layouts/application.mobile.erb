@@ -12,11 +12,8 @@
   <body class="<%= controller_name %> <%= action_name %>">
 		<div data-role="page" id="page1" data-theme="x">
 			<div data-theme="x" data-role="header">
-				<img
-			  	src='http://src.sencha.io/http://www.barcentral-bamberg.de/wp-content/uploads/2013/02/0188-logo.png'
-			  	alt='Logo'
-					class="logo-image"
-					/>
+				<!-- <img src='http://src.sencha.io/http://www.barcentral-bamberg.de/wp-content/uploads/2013/02/0188-logo.png' alt='Logo' class="logo-image"	/>-->
+				<h3>McGyros</h3>
 			</div>
 		  <%= render 'layouts/navigation' %>   
     <div id="main_mobil" role="main">
@@ -26,7 +23,7 @@
           <%= yield %>
 		    </div>
 			    <div data-theme="x" data-role="footer">
-						<h5><%= link_to 'Impressum', static_imprint_path, :data => {:role => "none"}%></h5>
+						<h5><%= link_to 'Impressum', static_imprint_path, :data => {:role => "none"}, :class=> "imprint"%></h5>
 			    </div>
        </div><!--! end of .container -->
       </div> <!--! end of #main -->
