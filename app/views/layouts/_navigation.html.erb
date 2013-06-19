@@ -1,4 +1,4 @@
-<%= link_to "Mobil Order", root_path, :class => 'brand' %>
+<%= link_to "Mc Gyros", root_path, :class => 'brand' %>
 <ul class="nav">
   <% if user_signed_in? %>
     <li>
@@ -21,15 +21,11 @@
       <%= link_to 'Karte', products_path %>
       </li>
     <% end %>
-  <% else %>
-    <li>
-    <%= link_to 'Sign up', new_user_registration_path %>
-    </li>
   <% end %>
-	<ul class="nav pull-right">
-		<li>
-			<%= link_to 'Warenkorb', current_cart%>
-		</li>
-	</ul>
-</ul>
 
+</ul>
+<ul class="nav pull-right">
+	<li>
+		<%= link_to 'Warenkorb', current_cart%>
+	</li>
+</ul>

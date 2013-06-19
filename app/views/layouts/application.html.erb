@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Mobil Order" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Mc Gyros" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Mobil Order" %>">
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
@@ -19,17 +19,51 @@
     </div>
     <div id="main" role="main">
       <div class="container">
-        <div class="content">
-           <div class="row">
+        <div class="content opacity">
+          <div class="row">
             <div class="span12">
               <%= render 'layouts/messages' %>
               <%= yield %>
             </div>
           </div>
-          <footer>
-          </footer>
         </div>
       </div> <!--! end of .container -->
+			<div id="menu_bottom">
+				<div id="box1" class="bottom_box top_border_radius">
+					<div class="box_header box_blue top_border_radius">
+						<h3>Bestellen</h3>
+					</div>
+					<div class="box_body">
+						<%= image_tag("box2.png")%>
+					</div>
+				</div>
+				<div id="box2" class="bottom_box top_border_radius">
+					<div class="box_header box_blue2 top_border_radius">
+						<h3>Partyservice</h3>
+					</div>
+					<div class="box_body">
+						<%= image_tag("box1.png")%>
+					</div>
+				</div>
+				<div id="box3" class="bottom_box top_border_radius">
+					<div class="box_header box_blue3 top_border_radius">
+						<h3>Kontakt</h3>
+					</div>
+					<div class="box_body">
+						<%= image_tag("box3.png")%>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+      <footer>
+		    <div class="navbar navbar-fixed-bottom">
+		      <nav class="navbar-inner navbar-bottom">
+		        <div class="container">
+		          <%= render 'layouts/navigation_bottom' %>
+		        </div>
+					</nav>
+				</div>
+      </footer>
     </div> <!--! end of #main -->
   </body>
 </html>
