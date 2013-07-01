@@ -3,17 +3,16 @@
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <!--<%= f.input :forname %>
-    <%= f.input :street %>
-    <%= f.input :city %>
-    <%= f.input :zip %>-->
+    <%= f.input :forname, :label => 'Vorname' %>
+    <%= f.input :street, :label => 'Straße' %>
+    <%= f.input :city, :label => 'Stadt' %>
+    <%= f.input :zip, :label => 'Postleitzahl' %>
     <%= f.input :email %>
     <%= f.input :mobile, :label => 'Handynummer' %>
-		<%= f.select :order_type, ['Zum Mitnehmen', 'Vorbestellung'] %>
-		<%= f.input :pickup_time, :label => "Wann willst du vorbei kommen?"  %>
+		<%= f.select :order_type, ['Liefern', 'Zum Mitnehmen', 'Vorbestellung'] %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, 'Kostenpflichtig bestellen', :class => "btn btn-success pull-left my-button" %>
+    <%= f.button :submit, 'Kostenpflichtig bestellen', :class => "btn btn-success" %>
   </div>
 <% end %>

@@ -1,0 +1,28 @@
+<h1>Anfahrt</h1>
+<p>Sagen Sie uns Ihre Meinung.</p>
+<%= form_for @message, :url => contact_path do |form| %>
+  <fieldset class="fields">
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+    
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.text_field :email %>
+    </div>
+    <div class="field">
+      <%= form.label :betreff %>
+      <%= form.text_field :subject %>
+    </div>
+    
+    <div class="field">
+      <%= form.label :nachricht %>
+      <%= form.text_area :body, :cols => "10", :rows => "10" %>
+    </div>
+  </fieldset>
+  
+  <fieldset class="actions">
+    <%= form.submit "Abschicken" %>
+  </fieldset>
+<% end %>

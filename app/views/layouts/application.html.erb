@@ -29,6 +29,7 @@
         </div>
       </div> <!--! end of .container -->
 			<div id="menu_bottom">
+				<%= link_to home_aktion_path do%>
 				<div id="box1" class="bottom_box top_border_radius">
 					<div class="box_header box_blue top_border_radius">
 						<h3>Bestellen</h3>
@@ -37,6 +38,8 @@
 						<%= image_tag("box2.png")%>
 					</div>
 				</div>
+				<% end %>
+				<%= link_to static_partyservice_path do%>
 				<div id="box2" class="bottom_box top_border_radius">
 					<div class="box_header box_blue2 top_border_radius">
 						<h3>Partyservice</h3>
@@ -45,6 +48,8 @@
 						<%= image_tag("box1.png")%>
 					</div>
 				</div>
+				<% end %>
+				<%= link_to contact_path do%>
 				<div id="box3" class="bottom_box top_border_radius">
 					<div class="box_header box_blue3 top_border_radius">
 						<h3>Kontakt</h3>
@@ -53,6 +58,7 @@
 						<%= image_tag("box3.png")%>
 					</div>
 				</div>
+				<% end %>
 				<div class="clear"></div>
 			</div>
       <footer>

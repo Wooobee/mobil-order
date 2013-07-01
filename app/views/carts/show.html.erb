@@ -1,20 +1,18 @@
-<div>Ihre Bestellung</div> 
+<h1>Ihre Bestellung</h1> 
 <table>
 <% @cart.line_items.each do |item| %> <tr>
 <td><%= item.quantity %>&times;</td>
 <td><%= item.product.title %></td>
-<td> je <%= number_to_currency(item.product.price, :unit => "€") %>€ = </td>
-<td ><%= number_to_currency(item.total_price , :unit => "€") %></td>
+<td> je <%= number_to_currency(item.product.price, :unit => "€") %> = </td>
+<td> <%= number_to_currency(item.total_price , :unit => "€") %></td>
 </tr> <% end %>
+<tr><td></td></tr>
 <tr>
-<td colspan="2">Total</td>
-<td><%= number_to_currency(@cart.total_price, :unit => "€") %></td>
+<td colspan="2"><b>Summe</b></td>
+<td><b><%= number_to_currency(@cart.total_price, :unit => "€") %></b></td>
   </tr>
 </table>
 
-<% if has_drinks %>
-	<%= button_to "Bestellung aufgeben", new_order_path, :method => :get, :class => "btn btn-success pull-left my-button"%>
-<% else %>
-	<%= button_to "Bestellung aufgeben", add_drink_path, :class => "btn btn-success pull-left my-button"%>
-<% end %>
-<%= button_to 'Warenkorb leeren', @cart, :method => :delete, :confirm => 'Wirklich?', :class => "btn btn-danger pull-left my-button" %>
+<%= button_to "Bestellung aufgeben", new_order_path, :method => :get, :class => "btn btn-success"%>
+
+<%= button_to 'Warenkorb leeren', @cart, :method => :delete, :confirm => 'Wirklich?', :class => "btn btn-danger" %>

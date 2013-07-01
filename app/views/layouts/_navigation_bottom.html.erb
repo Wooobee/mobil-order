@@ -1,9 +1,18 @@
 <ul class="nav">
     <li>
-    <%= link_to 'Impressum', destroy_user_session_path, :method=>'delete' %>
+    <%= link_to 'Impressum', static_imprint_path %>
     </li>
     <li>
-    <%= link_to 'Copyright Mc Gyros 2013', new_user_session_path %>
+    <%= link_to 'Kontakt', contact_path %>
+    </li>
+    <li>
+    <%= link_to 'Anfahrt', static_anfahrt_path %>
+    </li>
+    <li>
+    <a href="https://www.facebook.com/mcgyrosbamberg" target="_blank">Facebook</a>
+    </li>
+    <li>
+    <%= link_to 'Copyright Mc Gyros 2013', root_path %>
     </li>
 
 </ul>

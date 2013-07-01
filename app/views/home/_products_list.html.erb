@@ -1,4 +1,7 @@
-<% @products.each do |product| %>
+<% products = @products if products.nil?%>
+
+
+<% products.each do |product| %>
 	<div class="row">
 		<div class="span4">
 			<%= image_tag product.avatar_url(:thumb)	if not product.avatar_url.nil?%>

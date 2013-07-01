@@ -4,4 +4,10 @@ class StaticController < ApplicationController
 
   def how
   end
+  
+  def partyservice
+  end
+  
+  def anfahrt
+  end
 end

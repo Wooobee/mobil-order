@@ -80,10 +80,6 @@ margin: 0 auto;
 color: #ffffff !important;
 }
 
-.imprint{
-color: #fff !important;
-}
-
 .navbar-inner {
   background-color: #fff !important; /* background color will be black for all browsers */
   background-image: none !important;
@@ -95,4 +91,36 @@ color: #fff !important;
 position: relative;
 left: 80% ;
 
+}
+
+
+#message_body{
+  width:95%;
+}
+
+#message_subject{
+  width:95%;
+}
+
+a h3{ color: black;}
+
+.index_image{
+clear:both;
+width:30%;
+display: block;
+margin-left: auto;
+margin-right: auto
+}
+
+#grillhaus-banner{
+position: relative;
+top: -50px;
+}
+
+.centered_text{
+text-align: center;
+font-size: 30px;
+font-weight: bold;
+color: #184085;
+margin: 10px 10px;
 }

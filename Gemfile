@@ -4,7 +4,7 @@ gem 'rails', '3.2.13'
 gem 'rails-i18n'
 
 group :production do
-  gem 'pg'
+  gem 'mysql2'
 end
 group :development, :test do
   gem 'sqlite3'
@@ -33,8 +33,6 @@ gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 
 gem 'jquery_mobile_rails'
-gem 'mobylette'
 gem "carrierwave"
 gem "rmagick"
 gem 'simple_form_fancy_uploads'
-gem 'cloudinary'

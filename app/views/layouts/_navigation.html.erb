@@ -4,10 +4,6 @@
     <li>
     <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
     </li>
-  <% else %>
-    <li>
-    <%= link_to 'Login', new_user_session_path %>
-    </li>
   <% end %>
   <% if user_signed_in? %>
     <li>
@@ -22,6 +18,10 @@
       </li>
     <% end %>
   <% end %>
+	
+	<% active_categories.each do |c| %>
+		<li> <%= link_to c.name, list_path(:id => c.id)%></li>
+	<% end %>
 
 </ul>
 <ul class="nav pull-right">

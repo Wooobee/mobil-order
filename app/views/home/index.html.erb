@@ -1,8 +1,11 @@
-<h3>Angebote</h3>
-<div id="product_list">
-	<%= render 'products_list'%>
-</div>
 
-<% if not current_cart.total_items == 0 %>
-	<%= link_to 'Weiter zum Bestellen', current_cart, :class => "btn"%>
-<% end %>
+
+<%= image_tag("logo.png", :class => 'index_image')%>
+<p class="centered_text">Griechische Spezialitäten</p>
+<%= image_tag("grillhaus.png", :class => 'index_image')%>
+<%= image_tag("grillhaus-banner.png", :class => 'index_image', :id => 'grillhaus-banner')%>
+<p class="centered_text">Im ERBA Komplex</p>
+<p class="centered_text">An der Spinnerei 15, 96049 Bamberg</p>
+<p class="centered_text">0951 / 408 638 01</p>
+
+<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fmcgyrosbamberg%3Fref%3Dhl&amp;width=500&amp;height=258&amp;show_faces=true&amp;colorscheme=light&amp;stream=false&amp;show_border=false&amp;header=false&amp;appId=307910042614334" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:500px; height:258px; display: block; margin-left: auto; margin-right: auto" allowTransparency="true"></iframe>

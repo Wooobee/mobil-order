@@ -1,0 +1,8 @@
+<h3>Angebote</h3>
+<div id="product_list">
+	<%= render 'products_list'%>
+</div>
+
+<% if not current_cart.total_items == 0 %>
+	<%= link_to 'Weiter zum Bestellen', current_cart, :class => "btn"%>
+<% end %>
