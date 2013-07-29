@@ -5,6 +5,10 @@
 <td><%= item.product.title %></td>
 <td> je <%= number_to_currency(item.product.price, locale: :de) %> = </td>
 <td> <%= number_to_currency(item.total_price , locale: :de) %></td>
+<tr>
+	<td></td>
+	<td><% if item.is_rice.to_i > 0 %> mit Reis <%= item.is_rice %> <% end %><% if item.is_fries.to_i > 0 %> mit Pommes <%= item.is_fries %> <% end %></td>
+</tr>
 </tr> <% end %>
 <tr><td></td></tr>
 <tr>

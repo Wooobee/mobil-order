@@ -45,8 +45,17 @@ class LineItemsController < ApplicationController
   def create
     @cart = current_cart
     product = Product.find(params[:product_id])
-    @line_item = @cart.add_product(product.id, params[:is_rice])
-
+    
+    @line_item = @cart.add_product(product.id)
+    
+    if not params[:is_rice].nil?
+      if params[:is_rice] == "1"
+        @line_item.is_rice += 1
+      elsif params[:is_rice] == "2"
+        @line_item.is_fries += 1
+      end
+    end
+    
 
     respond_to do |format|
       if @line_item.save
