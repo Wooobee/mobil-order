@@ -1,0 +1,22 @@
+<h2>Ihre Bestellung</h2> 
+<table>
+<% cart.line_items.each do |item| %> <tr>
+<td><%= item.quantity %>&times;</td>
+<td><%= item.product.title %></td>
+<td> je <%= number_to_currency(item.product.price, locale: :de) %> = </td>
+<td> <%= number_to_currency(item.total_price , locale: :de) %></td>
+</tr> <% end %>
+<tr><td></td></tr>
+<tr>
+<td colspan="2"><b>Summe</b></td>
+<td><b><%= number_to_currency(cart.total_price, locale: :de) %></b></td>
+  </tr>
+</table>
+
+<%= button_to "Bestellung aufgeben", new_order_path, :method => :get, :class => "btn btn-success"%>
+
+<%= button_to 'Warenkorb leeren', cart, :method => :delete, :confirm => 'Willst du wirklich alles löschen?', :class => "btn btn-danger" %>
+
+<% if not has_drinks%>
+<p>Durst? Gleich Getränke dazu bestellen!</p>
+<% end %>

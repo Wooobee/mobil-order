@@ -6,8 +6,8 @@ class Ability
     if user.has_role? :admin
       can :manage, :all
     else
-      can :create, LineItem
-      can [:create, :read, :add_drink, :destroy], Cart
+      can [:create, :update], LineItem
+      can [:create, :read, :add_drink, :destroy, :update], Cart
       can :create, Order
       
     end

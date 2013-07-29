@@ -1,12 +1,32 @@
 <% products = @products if products.nil?%>
 
 
+
+<div class="row">
+	<div class="span8">
 <% products.each do |product| %>
+
+<!-- Modal -->
+<div id="riceModal<%= product['id'].to_s %>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Pommes oder Reis?</h3>
+  </div>
+  <div class="modal-body">
+    <p>Bestellen Sie gleich noch was zu trinken</p>
+			<%= link_to "Mit Pommes", line_items_path(:product_id => product, :is_freis => 1), :class => "btn btn-success pull-left my-button", :method => :post %>
+			<%= link_to "Mit Reis", line_items_path(:product_id => product, :is_rice => 1), :class => "btn btn-success pull-left my-button", :method => :post %>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Schließen</button>
+  </div>
+</div>
+	
 	<div class="row">
-		<div class="span4">
+		<div class="span3">
 			<%= image_tag product.avatar_url(:thumb)	if not product.avatar_url.nil?%>
 		</div>
-		<div class="span6">
+		<div class="span3">
   <p><%=link_to product.title, product %>		
 		
 		Anzahl:
@@ -18,13 +38,26 @@
 			<% end %>
 		<% end %>
 		<br/>
-		<%= number_to_currency(product.price) %>
+		<%= product.description%>
+		<br/>
+		<%= number_to_currency(product.price, locale: :de) %>
 	</p>
 	</div>
 	<div class="span2">
+		<% if product.is_rice%>
+		<a href="#riceModal<%= product['id'].to_s %>" role="button" class="btn btn-success pull-left my-button" data-toggle="modal" data-backdrop="false"><i class="icon-plus icon-white"></i></a>
+		<% else %>
 		<%= link_to raw("<i class=\"icon-plus icon-white\"></i>"), line_items_path(:product_id => product), :class => "btn btn-success pull-left my-button", :method => :post %>
+		<% end %>
 		<%= link_to raw("<i class=\"icon-minus icon-white\"></i>"), cart_update_path(:product_id => product), :class=>'btn btn-danger	my-button', :method => :post  %>
 		<div class="clearfix"></div>
 	</div>
+
+	
 </div>
 <% end %>
+</div>
+	<div class="span4">
+		<%= render 'carts/cart_list', :cart => current_cart%>
+	</div>
+</div>

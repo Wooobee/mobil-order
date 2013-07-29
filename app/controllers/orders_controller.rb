@@ -29,7 +29,7 @@ class OrdersController < ApplicationController
   def new
     @cart = current_cart
     if @cart.line_items.empty?
-        redirect_to root_url, :notice => "Your cart is empty"
+        redirect_to root_url, :notice => "Dein Einkaufswagen ist leer!"
         return 
       end
     
@@ -51,28 +51,19 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(params[:order])
     @order.add_line_items_from_cart(current_cart)
-    
-    require 'net/http'
-    
-    receiver = params[:order][:mobile]
-    
-    if not receiver.empty?
-      
-      result = Net::HTTP.get(URI.parse(URI.encode("http://gate1.goyyamobile.com/sms/sendsms.asp?receiver="+receiver+"&sender=Bar Central&msg=Vielen Dank für Ihre Bestellung. Wir freuen uns auf Ihren Besuch&id=1655501&pw=eph697kkx&msgtype=t")))
-  
-
-    end
 
     respond_to do |format|
       if @order.save
+        OrdersMailer.new_order(@order).deliver
+        OrdersMailer.new_order_customer(@order).deliver
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         format.html { redirect_to(root_url, :notice => 'Vielen Dank für Ihre Bestellung.') }
-        format.mobile { redirect_to(root_url, :notice => 'Vielen Dank für Ihre Bestellung.') }
+        #format.mobile { redirect_to(root_url, :notice => 'Vielen Dank für Ihre Bestellung.') }
         format.json { render json: @order, status: :created, location: @order }
       else
         format.html { render action: "new" }
-        format.mobile { render action: "new" }
+        #format.mobile { render action: "new" }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end

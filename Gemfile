@@ -3,9 +3,9 @@ gem 'rake'
 gem 'rails', '3.2.13'
 gem 'rails-i18n'
 
-group :production do
-  gem 'mysql2'
-end
+#group :production do
+  #gem 'mysql2'
+#end
 group :development, :test do
   gem 'sqlite3'
   #gem 'pg'

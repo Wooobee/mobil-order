@@ -7,6 +7,7 @@
 		<%= f.input :avatar, as: :image_preview, input_html: {preview_version: :thumb}  %>
     <%= f.input :price, as: :currency %>
 		<%= f.association :category, :include_blank => false %>  
+		<%= f.input :is_rice, :input_html => { :checked => false } %>
 		<%= f.input :is_daily, :input_html => { :checked => false } %>
 		<%= f.hidden_field :user_id, value: current_user.id %>
   </div>

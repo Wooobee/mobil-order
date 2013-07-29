@@ -86,7 +86,7 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to root_url }
-      format.mobile { redirect_to root_url }
+      #format.mobile { redirect_to root_url }
       format.json { head :no_content }
     end
   end
@@ -98,7 +98,7 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       format.html 
-      format.mobile 
+      #format.mobile 
       format.json { head :no_content }
     end
   end

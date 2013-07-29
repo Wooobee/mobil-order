@@ -4,7 +4,7 @@ class Product < ActiveRecord::Base
   belongs_to :category
   has_many :line_items
   has_many :orders, :through => :line_items
-  attr_accessible :description, :avatar, :price, :title, :user_id, :is_daily, :category_id
+  attr_accessible :description, :avatar, :price, :title, :user_id, :is_daily, :category_id, :is_rice
   mount_uploader :avatar, AvatarUploader
   
   validates :title, :user_id, :price, :category_id, :presence => true

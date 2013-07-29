@@ -45,16 +45,17 @@ class LineItemsController < ApplicationController
   def create
     @cart = current_cart
     product = Product.find(params[:product_id])
-    @line_item = @cart.add_product(product.id)
+    @line_item = @cart.add_product(product.id, params[:is_rice])
+
 
     respond_to do |format|
       if @line_item.save
         format.html { redirect_to(:back, :notice => 'Artikel hinzugefügt.') }
-        format.mobile { redirect_to(:back, :notice => 'Artikel hinzugefügt.') }
+        #format.mobile { redirect_to(:back, :notice => 'Artikel hinzugefügt.') }
         format.json { render json: @line_item, status: :created, location: @line_item }
       else
         format.html { render action: "new" }
-        format.mobile { render action: "new" }
+        #format.mobile { render action: "new" }
         format.json { render json: @line_item.errors, status: :unprocessable_entity }
       end
     end
@@ -75,7 +76,7 @@ class LineItemsController < ApplicationController
     end
 
   
-    redirect_to(root_url, :notice => 'Artikel entfernt') 
+    redirect_to(:back, :notice => 'Artikel entfernt') 
 
   end
 

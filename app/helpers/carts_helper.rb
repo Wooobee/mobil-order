@@ -4,7 +4,7 @@ module CartsHelper
   def has_drinks
     drinks = false
     current_cart.line_items.each do |item|
-      if Product.find(item.product_id).is_daily
+      if item.product.category.is_drink
         drinks = true
       end
     end

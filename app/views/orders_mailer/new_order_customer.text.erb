@@ -1,0 +1,59 @@
+Hallo,
+
+
+Vielen Dank dür deine Bestllung bei uns. Anbei nochmal die Daten für dich zur Kontrolle.
+
+Deine Lieferadresse:
+
+######################################
+
+Name: <%= @order.name %>
+
+Vorname: <%= @order.forname %>
+
+Straße: <%= @order.street %>
+
+Stadt: <%= @order.city %>
+
+PLZ: <%= @order.zip %>
+
+Handynummer: <%= @order.mobile %>
+
+Email: <%= @order.email %>
+
+Bestellung zum: <%= @order.order_type %>
+
+######################################
+
+Deine Bestellung:
+<% @order.line_items.each do |item| %>
+
+<%= item.product.title %>
+Anzahl: <%= item.quantity %>
+Einzelpreis: <%= number_to_currency(item.product.price, locale: :de) %>
+Summe: <%= number_to_currency(item.total_price, locale: :de)%>
+
+<% end %>
+
+=========================
+Gesamtsumme: <%= number_to_currency(@order.total_price, locale: :de)%>
+
+
+Deine Bestellung wird dir in ca. 30 Minuten geliefert.
+
+Viel Dank und bis zum nächsten mal.
+
+Dein MC-Gyros Team
+
+An der Spinnerei 15
+96049 Bamberg
+
+Telefon: +49 (0)951 40 86 38 01
+E-Mail: info@mc-gyros.de
+
+Like us on Facebook: https://www.facebook.com/mcgyrosbamberg
+
+
+
+
+

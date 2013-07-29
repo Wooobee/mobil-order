@@ -1,10 +1,10 @@
-<h3><%= @category.name %></h3>
+<h1><%= @category.name %></h1>
 
 <div id="product_list">
 	<%= render 'home/products_list', :products => @category.products %>
 </div>
 
 <% if not current_cart.total_items == 0 %>
-	<%= link_to 'Weiter zum Bestellen', current_cart, :class => "btn"%>
+	<%= link_to 'Weiter zum Bestellen', current_cart, :class => "btn btn-success"%>
 <% end %>
 

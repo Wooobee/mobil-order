@@ -76,20 +76,5 @@ module MobilOrder
     
     #for heroku
     config.assets.initialize_on_precompile = false
-    
-    
-    config.action_mailer.smtp_settings = {
-      :address              => "mailnetcubed.de",
-      :port                 => 587,
-      :domain               => "wooobee.com",
-      :user_name            => "manuel@wooobee.com",
-      :password             => "mjl2012",
-      :authentication       => :plain,
-      :enable_starttls_auto => true
-    }
-
-    config.action_mailer.default_url_options = {
-      :host => "wooobee.com"
-    }
   end
 end
