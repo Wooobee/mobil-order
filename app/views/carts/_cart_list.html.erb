@@ -7,7 +7,11 @@
 <td> <%= number_to_currency(item.total_price , locale: :de) %></td>
 <tr>
 	<td></td>
-	<td><% if item.is_rice.to_i > 0 %> mit Reis <%= item.is_rice %> <% end %><% if item.is_fries.to_i > 0 %> mit Pommes <%= item.is_fries %> <% end %></td>
+	<td><% if item.is_rice.to_i > 0 %> mit Reis x <%= item.is_rice %> <% end %></td>
+</tr>
+<tr>
+  <td></td>
+  <td><% if item.is_fries.to_i > 0 %> mit Pommes x <%= item.is_fries %> <% end %></td>
 </tr>
 </tr> <% end %>
 <tr><td></td></tr>

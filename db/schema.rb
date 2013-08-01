@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(:version => 20130722190610) do
     t.datetime "updated_at",                :null => false
     t.integer  "quantity",   :default => 1
     t.integer  "order_id"
-    t.integer  "is_rice"
-    t.integer  "is_fries"
+    t.integer  "is_rice",    :default => 0
+    t.integer  "is_fries",   :default => 0
   end
 
   create_table "orders", :force => true do |t|
